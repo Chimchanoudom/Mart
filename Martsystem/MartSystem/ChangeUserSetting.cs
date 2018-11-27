@@ -25,9 +25,6 @@ namespace MartSystem
 
         private void ChangeRate_Load(object sender, EventArgs e)
         {
-            //delete this when done testing
-            dataCon.getRateAndDaysAlmostExp();
-            //
 
             switch (behaviour)
             {

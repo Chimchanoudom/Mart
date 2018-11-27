@@ -24,9 +24,7 @@ namespace MartSystem
         string sql;
         private void Stock_Load(object sender, EventArgs e)
         {
-            //Delete this after done testing
-            dataCon.getRateAndDaysAlmostExp();
-            //
+           
 
             
 

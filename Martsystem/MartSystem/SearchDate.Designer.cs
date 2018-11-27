@@ -39,10 +39,10 @@
             this.dtpFrom.CustomFormat = "dd/MM/yyyy";
             this.dtpFrom.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFrom.Location = new System.Drawing.Point(18, 19);
+            this.dtpFrom.Location = new System.Drawing.Point(196, 19);
             this.dtpFrom.Margin = new System.Windows.Forms.Padding(4);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(128, 34);
+            this.dtpFrom.Size = new System.Drawing.Size(132, 34);
             this.dtpFrom.TabIndex = 0;
             // 
             // btnOK
@@ -63,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 25);
+            this.label1.Location = new System.Drawing.Point(157, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 25);
             this.label1.TabIndex = 4;
@@ -74,10 +74,10 @@
             this.dtpTo.CustomFormat = "dd/MM/yyyy";
             this.dtpTo.Font = new System.Drawing.Font("Times New Roman", 14F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTo.Location = new System.Drawing.Point(196, 19);
+            this.dtpTo.Location = new System.Drawing.Point(18, 19);
             this.dtpTo.Margin = new System.Windows.Forms.Padding(4);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(128, 34);
+            this.dtpTo.Size = new System.Drawing.Size(132, 34);
             this.dtpTo.TabIndex = 5;
             // 
             // SearchDate
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(340, 121);
+            this.ClientSize = new System.Drawing.Size(351, 124);
             this.Controls.Add(this.dtpTo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);

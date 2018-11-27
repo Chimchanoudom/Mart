@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,7 @@ namespace MartSystem
                 if ((txtuserName.Text.ToLower() ==Dr["UserAcc"].ToString().ToLower()&&txtpass.Text.ToLower()==Dr["Pwd"].ToString().ToLower()))
                     {
                     if (Convert.ToBoolean(Dr["Active"]) == true){
-                        MessageBox.Show("Welcome "+Dr["Lname"]+" "+Dr["Fname"]);
+                        MessageBox.Show("Welcome "+Dr["Fname"]+" "+Dr["Lname"]);
                         Dom_SqlClass.empID = Dr["EmpID"].ToString();
                         Dom_SqlClass.fName = Dr["Fname"].ToString();
                         Dom_SqlClass.lName = Dr["Lname"].ToString();
@@ -87,9 +88,13 @@ namespace MartSystem
         DataTable dt;
         private void LogIN_Load(object sender, EventArgs e)
         {
+            dataCon.getRateAndDaysAlmostExp();
+
             dt = Dom_SqlClass.retriveData("Employee join UserAcc on Employee.EmpID=UserAcc.EmpID", "", new string[] {"*"});
 
-
+            string fileDir = AppDomain.CurrentDomain.BaseDirectory + @"Image\Product\";
+            DirectoryInfo di =Directory.CreateDirectory(fileDir);
+           
         }
 
         private void txtpass_MouseClick(object sender, MouseEventArgs e)

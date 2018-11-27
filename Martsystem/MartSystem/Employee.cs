@@ -74,6 +74,8 @@ namespace MartSystem
             DefaultColorBtnDelete=btnDelete.BackColor;
 
             
+
+            
             dom_Design.GenerateColumHeader(new string[] { "ID", "Hire Date", "FName", "LName","Gender", "Date of birth","Address","Phone","Basic Salary","Position","Time Shift","Active","UserName","Password", "Image" }, 15, datasupplier,DgvDataSource);
             //DataGridViewColumn dgvImg = new DataGridViewImageColumn();
             //dgvImg.Name = "Image";
@@ -86,6 +88,8 @@ namespace MartSystem
             //Disable this after completely finished coding
             UserLoginDetail.position = "admin";
             //
+
+           
 
             string sqlCmd = "";
             SqlDataReader dr;

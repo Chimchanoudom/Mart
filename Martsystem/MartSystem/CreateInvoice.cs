@@ -85,7 +85,7 @@ namespace MartSystem
         {
             if (dataRowInvoice == null)
             {
-                dataCon.getRateAndDaysAlmostExp();
+                
                 txtRate.Text = dataCon.rate.ToString("#,##0");
 
                 dataCon.Con.Open();
@@ -527,11 +527,7 @@ namespace MartSystem
 
             if (recieve >= total && total > 0)
             {
-                //comment this line when done testing
-                    UserLoginDetail.empID = "Emp_001";
-                    UserLoginDetail.fName = "Vut";
-                    UserLoginDetail.lName = "Pov";
-                //
+                
 
                 DateTime now = DateTime.Now;
                 double recieveKh = FormatStringToNumber(txtRecieveKh.Text);
@@ -616,10 +612,15 @@ namespace MartSystem
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (recieve >= total && total > 0)
+            {
 
+            }
+            else
+            {
+                MessageBox.Show("Invalid Infomation","Can't Print",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
+            
         }
-
-
-
     }
 }

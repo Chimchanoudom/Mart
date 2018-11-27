@@ -24,7 +24,7 @@ namespace MartSystem
         SqlDataReader dataReader;
         bool error;
         string fileDir = AppDomain.CurrentDomain.BaseDirectory+@"Image\Product\";
-        DirectoryInfo di;
+       
         string fileName;
 
 
@@ -78,9 +78,7 @@ namespace MartSystem
 
         void copyImgToFolder()
         {
-            //Delete variable di when done testing
-            di = Directory.CreateDirectory(fileDir);
-            //
+           
 
             string destFile = fileDir + @"\" + fileName;
             try
@@ -105,6 +103,7 @@ namespace MartSystem
             lbProductID.Text = proID.ToString("Pro_000");
 
             btnAdd.Text = "Add";
+            
         }
 
         
@@ -242,6 +241,8 @@ namespace MartSystem
 
                 cbBrand.SelectedIndex = cbBrand.FindStringExact(dgvProduct.Rows[selectedRowIndex].Cells["Brand"].Value + "");
 
+
+
                 ImageBox.Image = dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value as Image;
 
                 btnAdd.Text = "Cancel";
@@ -251,6 +252,7 @@ namespace MartSystem
             else
             {
                 Clean();
+                
             }
         }
 
@@ -287,13 +289,15 @@ namespace MartSystem
                 dgvProduct.Rows[selectedRowIndex].Cells["Category"].Value = category;
                 dgvProduct.Rows[selectedRowIndex].Cells["Brand"].Value = brand;
 
-                ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Dispose();
+                
                 if (imgFileNameInSelectedRow != "")
                 {
+                    ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Dispose();
                     File.Delete(fileDir + imgFileNameInSelectedRow);
                 }
 
                 dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value = ImageBox.Image;
+                
             }
         }
 
