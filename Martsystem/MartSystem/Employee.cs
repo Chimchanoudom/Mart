@@ -86,7 +86,7 @@ namespace MartSystem
             datasupplier.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman", 12,FontStyle.Bold);
 
             //Disable this after completely finished coding
-            UserLoginDetail.position = "admin";
+            //UserLoginDetail.position = "admin";
             //
 
            
@@ -96,11 +96,16 @@ namespace MartSystem
             try
             {
                 dataCon.Con.Open();
-                if (UserLoginDetail.position == "admin")
+                if (UserLoginDetail.position.ToLower() == "admin")
                     sqlCmd = @"SELECT Employee.EmpID,format(HiredDate,'yyyy/MM/dd') AS HiredDate, FName,
                             LName,Gender,format(DOB,'yyyy/MM/dd') AS DOB,Address,Phone,BasicSalary,Position,TimeShift,
                             Active,UserAcc,Pwd,Image
                             FROM Employee LEFT JOIN UserAcc ON Employee.EmpID=UserAcc.EmpID;";
+                else
+                {
+                    MessageBox.Show("Only Admin can access to this form!");               
+                    this.Close();
+                }
             }
             catch (Exception ex)
             {
@@ -316,13 +321,36 @@ namespace MartSystem
                         MessageBox.Show("Update Failed!");
                     }
                 }
+
+                string selectCmd = "SELECT * FROM UserAcc WHERE EmpID='" + id + "';";
+                string[] backUpData = new string[3];
+                dataCon.Con.Open();
+                try
+                {
+                    SqlDataReader dr = dataCon.ExecuteQry(selectCmd);
+                    while (dr.Read())
+                    {
+                        for (int i = 0; i < 3; i++)
+                            backUpData[i] = dr.GetString(i);
+                    }
+                }
+                catch (Exception)
+                {
+                }
+                finally
+                {
+                    dataCon.Con.Close();
+                }
+
                 dataCon.exActionQuery.deleteDataFromDB("UserAcc", "WHERE EmpID='" + id + "';");
                 sqlCmd = "INSERT INTO UserAcc VALUES('" + empid + "','" + username + "','" + code + "');";
                 dataCon.ExecuteActionQry(sqlCmd, ref error);
                 if (error)
                 {
                     error = false;
-                    MessageBox.Show("Insertion Failed!");
+                    dataCon.exActionQuery.insertDataToDB("UserAcc", backUpData);
+                    MessageBox.Show("Please don't use duplicated username!\r\nUpdate Error for user: "+id);
+                    rows.Cells["UserName"].Value = backUpData[1];
                 }
             }
 
