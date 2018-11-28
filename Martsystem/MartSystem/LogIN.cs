@@ -54,6 +54,7 @@ namespace MartSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            bool incorrectedInfo = false;
             foreach(DataRow Dr in dt.Rows)
             {
                 //MessageBox.Show(Dr["UserAcc"].ToString());
@@ -70,6 +71,7 @@ namespace MartSystem
                         this.DialogResult = DialogResult.OK;
                         Form1 f = new Form1();
                         f.Show();
+                        incorrectedInfo = false;
                         break;
                     }
                     else
@@ -80,10 +82,13 @@ namespace MartSystem
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Password or User Name !");
-                    break;
+                    incorrectedInfo = true;
+                    //MessageBox.Show("Incorrect Password or User Name !");
+                    //break;
                 }
             }
+            if(incorrectedInfo)
+                MessageBox.Show("Incorrect Password or User Name !");
         }
         DataTable dt;
         private void LogIN_Load(object sender, EventArgs e)

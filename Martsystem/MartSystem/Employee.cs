@@ -105,6 +105,7 @@ namespace MartSystem
                 {
                     MessageBox.Show("Only Admin can access to this form!");               
                     this.Close();
+                    return;
                 }
             }
             catch (Exception ex)
@@ -448,6 +449,44 @@ namespace MartSystem
             else
             {
                 MessageBox.Show("Please fill in all the required information!");
+            }
+        }
+
+        private void txtFirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RestrictionClass.restrictFromKeyboard.restrictNumberAndSigns(e);
+        }
+
+        private void txtSalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string[] a = {};
+            RestrictionClass.restrictFromKeyboard.restrictAlphabet(e,a);
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+            txtSalary.Text = RestrictionClass.GetIntFromKhNumber(txtSalary.Text);
+            if (txtSalary.Text != string.Empty && datasupplier.SelectedRows.Count < 1)
+            {
+                txtSalary.SelectionStart = txtSalary.Text.Length;
+                txtSalary.SelectionLength = 0;
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            RestrictionClass.restrictFromKeyboard.restrictUnicodeAlphabets(e);
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            TextBox txt = ((TextBox)sender); 
+            txt.Text = RestrictionClass.GetIntFromKhNumber(txt.Text);
+            if (txt.Text != string.Empty && datasupplier.SelectedRows.Count < 1)
+            {
+                txt.SelectionStart = txt.Text.Length;
+                txt.SelectionLength = 0;
             }
         }
     }
