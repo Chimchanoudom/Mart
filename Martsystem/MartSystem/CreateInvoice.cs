@@ -319,7 +319,9 @@ namespace MartSystem
         {
             DataRow[] dr = dtProduct.Select("Barcode='" + txtBarcode.Text + "'");
 
-            if (dr.Length == 1)
+            
+
+            if (dr.Length == 1 && (double)dr[0]["qty"]>0)
             {
                 txtBarcode.Text = "";
 
@@ -363,6 +365,10 @@ namespace MartSystem
                 dgvInvoiceDetail.Rows[lastIndexInDgv].Cells["ColSubTotal"].Value = subtotal + "";
 
                 ShowGrandTotalAndChange();
+            }
+            else
+            {
+                txtBarcode.Text = txtBarcode.WatermarkedText;
             }
         }
 
