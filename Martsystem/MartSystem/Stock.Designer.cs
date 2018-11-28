@@ -233,6 +233,7 @@
             this.dgvStock.Size = new System.Drawing.Size(847, 308);
             this.dgvStock.TabIndex = 0;
             this.dgvStock.SelectionChanged += new System.EventHandler(this.dgvStock_SelectionChanged);
+            this.dgvStock.Sorted += new System.EventHandler(this.dgvStock_Sorted);
             // 
             // contextMenuStrip1
             // 

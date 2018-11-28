@@ -46,6 +46,7 @@ namespace MartSystem
             dgvStock.Columns["Import Date"].DefaultCellStyle.Format =
                 dgvStock.Columns["Expire Date"].DefaultCellStyle.Format
                 = "dd/MM/yyyy";
+
             ChangeRowForeColor();
 
 
@@ -152,6 +153,11 @@ namespace MartSystem
         private void rndExpired_Click(object sender, EventArgs e)
         {
             btnSearch_Click(null, null);
+        }
+
+        private void dgvStock_Sorted(object sender, EventArgs e)
+        {
+            ChangeRowForeColor();
         }
     }
 }

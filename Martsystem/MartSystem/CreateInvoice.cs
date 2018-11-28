@@ -529,17 +529,19 @@ namespace MartSystem
             {
                 
 
-                DateTime now = DateTime.Now;
+                
                 double recieveKh = FormatStringToNumber(txtRecieveKh.Text);
                 double recieveEng = FormatStringToNumber(txtRecieveEng.Text);
 
+                string stNow = string.Format("{0:yyyy/MM/dd hh:mm:ss tt}", DateTime.Now);
+
                 if (dataRowInvoice == null)
                 {
-                    sql = "insert into invoice values('" + txtInvoiceID.Text + "','" + now + "'," + total + "," + dataCon.rate + "," + recieveEng + "," + recieveKh + ",'" + UserLoginDetail.empID + "');";
+                    sql = "insert into invoice values('" + txtInvoiceID.Text + "','"+stNow+"'," + total + "," + dataCon.rate + "," + recieveEng + "," + recieveKh + ",'" + UserLoginDetail.empID + "');";
                 }
                 else
                 {
-                    sql = "insert into invoiceLog (editDate,EditBy,InvID) values('" + now + "','" + UserLoginDetail.empID + "','" + txtInvoiceID.Text + "');";
+                    sql = "insert into invoiceLog (editDate,EditBy,InvID) values('" + stNow + "','" + UserLoginDetail.empID + "','" + txtInvoiceID.Text + "');";
 
                     sql += "update invoice set Total=" + total + ",recieveEng=" + recieveEng + ",recieveKh=" + recieveKh + " where invID='" + txtInvoiceID.Text + "';";
 
@@ -574,7 +576,7 @@ namespace MartSystem
                     MessageBox.Show("Saved", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     if (dtInvoiceData != null)
                     {
-                        dtInvoiceData.Rows.Add(txtInvoiceID.Text, now, txtGrandEng.Text, dataCon.rate, recieveEng, recieveKh, UserLoginDetail.fName + " " + UserLoginDetail.lName);
+                        dtInvoiceData.Rows.Add(txtInvoiceID.Text, stNow, txtGrandEng.Text, dataCon.rate, recieveEng, recieveKh, UserLoginDetail.fName + " " + UserLoginDetail.lName);
                     }
                     else
                     {

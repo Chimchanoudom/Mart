@@ -151,8 +151,9 @@ namespace MartSystem
                 }
 
 
-                DateTime now = DateTime.Now;
-                sql = "insert into Expense values('"+lbExpenseID.Text+"','"+now+"',"+total+")";
+             
+                string stNow = string.Format("{0:yyyy/MM/dd hh:mm:ss tt}", DateTime.Now);
+                sql = "insert into Expense values('"+lbExpenseID.Text+"','"+stNow+"',"+total+")";
 
                
                 insertDataIntoExpenseDetail();

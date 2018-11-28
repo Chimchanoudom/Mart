@@ -116,5 +116,10 @@ namespace MartSystem
         {
 
         }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
     }
 }

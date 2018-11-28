@@ -43,21 +43,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupDataEmployee = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btndelete = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataBrand)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupDataEmployee.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -100,7 +100,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(152, 48);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 21);
+            this.label12.Size = new System.Drawing.Size(15, 23);
             this.label12.TabIndex = 14;
             this.label12.Text = ":";
             // 
@@ -109,7 +109,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(150, 14);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(14, 21);
+            this.label10.Size = new System.Drawing.Size(15, 23);
             this.label10.TabIndex = 15;
             this.label10.Text = ":";
             // 
@@ -119,7 +119,7 @@
             this.panel7.Controls.Add(this.btnsearch);
             this.panel7.Controls.Add(this.txtSearch);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(3, 24);
+            this.panel7.Location = new System.Drawing.Point(3, 29);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(433, 44);
@@ -176,7 +176,7 @@
             this.txtBarndName.Location = new System.Drawing.Point(185, 52);
             this.txtBarndName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtBarndName.Name = "txtBarndName";
-            this.txtBarndName.Size = new System.Drawing.Size(154, 26);
+            this.txtBarndName.Size = new System.Drawing.Size(154, 30);
             this.txtBarndName.TabIndex = 7;
             // 
             // label4
@@ -184,7 +184,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 21);
+            this.label4.Size = new System.Drawing.Size(134, 23);
             this.label4.TabIndex = 8;
             this.label4.Text = "Brand Name";
             // 
@@ -193,7 +193,7 @@
             this.lblID.AutoSize = true;
             this.lblID.Location = new System.Drawing.Point(187, 14);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(27, 21);
+            this.lblID.Size = new System.Drawing.Size(30, 23);
             this.lblID.TabIndex = 9;
             this.lblID.Text = "ID";
             // 
@@ -202,7 +202,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 21);
+            this.label2.Size = new System.Drawing.Size(135, 23);
             this.label2.TabIndex = 10;
             this.label2.Text = "Employee ID";
             // 
@@ -215,7 +215,7 @@
             this.panel3.Controls.Add(this.lblID);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(6, 29);
+            this.panel3.Location = new System.Drawing.Point(6, 34);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(343, 105);
@@ -238,6 +238,79 @@
             this.groupDataEmployee.TabIndex = 3;
             this.groupDataEmployee.TabStop = false;
             this.groupDataEmployee.Text = "Supplier Information";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnSave);
+            this.panel4.Controls.Add(this.btndelete);
+            this.panel4.Controls.Add(this.btnEdit);
+            this.panel4.Controls.Add(this.btnAdd);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(6, 139);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(343, 46);
+            this.panel4.TabIndex = 5;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Blue;
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(255, 0);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(85, 46);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btndelete
+            // 
+            this.btndelete.BackColor = System.Drawing.Color.Red;
+            this.btndelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndelete.ForeColor = System.Drawing.Color.White;
+            this.btndelete.Location = new System.Drawing.Point(170, 0);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(85, 46);
+            this.btndelete.TabIndex = 11;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(85, 0);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(85, 46);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Green;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(85, 46);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel1
             // 
@@ -265,82 +338,9 @@
             this.groupBox6.Text = "ស្វែងរក";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Green;
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 46);
-            this.btnAdd.TabIndex = 9;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(85, 0);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(85, 46);
-            this.btnEdit.TabIndex = 10;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btndelete
-            // 
-            this.btndelete.BackColor = System.Drawing.Color.Red;
-            this.btndelete.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btndelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndelete.ForeColor = System.Drawing.Color.White;
-            this.btndelete.Location = new System.Drawing.Point(170, 0);
-            this.btndelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btndelete.Name = "btndelete";
-            this.btndelete.Size = new System.Drawing.Size(85, 46);
-            this.btndelete.TabIndex = 11;
-            this.btndelete.Text = "Delete";
-            this.btndelete.UseVisualStyleBackColor = false;
-            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Blue;
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(255, 0);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(85, 46);
-            this.btnSave.TabIndex = 12;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnSave);
-            this.panel4.Controls.Add(this.btndelete);
-            this.panel4.Controls.Add(this.btnEdit);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(6, 134);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(343, 46);
-            this.panel4.TabIndex = 5;
-            // 
             // Brand
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(785, 604);
@@ -350,6 +350,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Brand";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "branch";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.branch_FormClosed);
             this.Load += new System.EventHandler(this.branch_Load);
@@ -360,9 +361,9 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupDataEmployee.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

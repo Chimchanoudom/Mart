@@ -69,7 +69,7 @@
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(156, 62);
-            this.btnLogIn.TabIndex = 0;
+            this.btnLogIn.TabIndex = 2;
             this.btnLogIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             this.btnLogIn.MouseHover += new System.EventHandler(this.btnLogIn_MouseHover);
@@ -111,7 +111,7 @@
             this.panel1.Controls.Add(this.btnExite);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 248);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(569, 71);
             this.panel1.TabIndex = 2;
@@ -123,7 +123,7 @@
             this.panel2.Controls.Add(this.bunifuCustomLabel1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(569, 71);
             this.panel2.TabIndex = 3;
@@ -158,7 +158,7 @@
             this.txtuserName.LineMouseHoverColor = System.Drawing.Color.Gray;
             this.txtuserName.LineThickness = 4;
             this.txtuserName.Location = new System.Drawing.Point(204, 89);
-            this.txtuserName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtuserName.Margin = new System.Windows.Forms.Padding(5);
             this.txtuserName.Name = "txtuserName";
             this.txtuserName.Size = new System.Drawing.Size(347, 41);
             this.txtuserName.TabIndex = 0;
@@ -225,11 +225,12 @@
             this.txtpass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpass.Location = new System.Drawing.Point(204, 178);
-            this.txtpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtpass.Margin = new System.Windows.Forms.Padding(4);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(347, 25);
-            this.txtpass.TabIndex = 7;
+            this.txtpass.TabIndex = 1;
             this.txtpass.UseSystemPasswordChar = true;
+            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
             // 
             // jj
             // 
@@ -245,7 +246,7 @@
             this.jj.LineMouseHoverColor = System.Drawing.Color.Gray;
             this.jj.LineThickness = 4;
             this.jj.Location = new System.Drawing.Point(204, 164);
-            this.jj.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.jj.Margin = new System.Windows.Forms.Padding(5);
             this.jj.Name = "jj";
             this.jj.Size = new System.Drawing.Size(347, 41);
             this.jj.TabIndex = 1;
@@ -267,7 +268,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LogIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

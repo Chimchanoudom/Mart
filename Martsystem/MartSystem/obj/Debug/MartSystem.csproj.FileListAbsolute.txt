@@ -175,3 +175,4 @@ D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.csproj.CoreCompileIn
 D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.csproj.CopyComplete
 D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.exe
 D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.pdb
+E:\Year 3\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.ChangePassword.resources

@@ -51,7 +51,12 @@ namespace MartSystem
             {
                 if("1234569870'!@#$%^&*()_+][{}:;\"<,>.?/\\~`|=-.".IndexOf(e.KeyChar) >= 0)
                     e.KeyChar = '\0';
-                
+            }
+
+            public static void restrictOnKeyPress(string restrictSting, KeyPressEventArgs e)
+            {
+                if (restrictSting.IndexOf(e.KeyChar) >= 0)
+                    e.KeyChar = '\0';
             }
 
             public static void restrictUnicodeAlphabets(KeyPressEventArgs e)

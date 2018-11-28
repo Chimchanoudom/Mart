@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvLogData = new System.Windows.Forms.DataGridView();
-          //  this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +55,17 @@
             this.dgvLogData.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dgvLogData.RowTemplate.Height = 33;
             this.dgvLogData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLogData.Size = new System.Drawing.Size(629, 413);
+            this.dgvLogData.Size = new System.Drawing.Size(719, 413);
             this.dgvLogData.TabIndex = 0;
             // 
             // LogData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 413);
+            this.ClientSize = new System.Drawing.Size(719, 413);
             this.Controls.Add(this.dgvLogData);
             this.Name = "LogData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogData";
             this.Load += new System.EventHandler(this.LogData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLogData)).EndInit();

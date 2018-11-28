@@ -69,6 +69,7 @@ namespace MartSystem
 
         private void btncheckoutNote_Click(object sender, EventArgs e)
         {
+            
             //dom_Design.dropdown(pncheckout, 48, 3);
             //btncheckoutNote.Normalcolor = Color.Green;
             //ClickChang(btncheckoutNote.Name);

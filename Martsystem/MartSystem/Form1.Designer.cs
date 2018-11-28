@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation6 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnMenu = new System.Windows.Forms.Panel();
             this.pnSetting = new System.Windows.Forms.Panel();
@@ -107,7 +107,7 @@
             this.Transition3.SetDecoration(this.pnMenu, BunifuAnimatorNS.DecorationType.None);
             this.pnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnMenu.Location = new System.Drawing.Point(0, 0);
-            this.pnMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnMenu.Margin = new System.Windows.Forms.Padding(4);
             this.pnMenu.Name = "pnMenu";
             this.pnMenu.Size = new System.Drawing.Size(376, 886);
             this.pnMenu.TabIndex = 1;
@@ -123,7 +123,7 @@
             this.pnSetting.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnSetting.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnSetting.Location = new System.Drawing.Point(0, 458);
-            this.pnSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnSetting.Margin = new System.Windows.Forms.Padding(4);
             this.pnSetting.Name = "pnSetting";
             this.pnSetting.Size = new System.Drawing.Size(376, 59);
             this.pnSetting.TabIndex = 15;
@@ -154,7 +154,7 @@
             this.btnHelp.IconZoom = 90D;
             this.btnHelp.IsTab = false;
             this.btnHelp.Location = new System.Drawing.Point(0, 118);
-            this.btnHelp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnHelp.Margin = new System.Windows.Forms.Padding(5);
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.Normalcolor = System.Drawing.Color.Gray;
             this.btnHelp.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -194,7 +194,7 @@
             this.btnPlayAndStop.IconZoom = 90D;
             this.btnPlayAndStop.IsTab = false;
             this.btnPlayAndStop.Location = new System.Drawing.Point(0, 59);
-            this.btnPlayAndStop.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnPlayAndStop.Margin = new System.Windows.Forms.Padding(5);
             this.btnPlayAndStop.Name = "btnPlayAndStop";
             this.btnPlayAndStop.Normalcolor = System.Drawing.Color.Gray;
             this.btnPlayAndStop.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -234,7 +234,7 @@
             this.btnSetting.IconZoom = 90D;
             this.btnSetting.IsTab = false;
             this.btnSetting.Location = new System.Drawing.Point(0, 0);
-            this.btnSetting.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(5);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Normalcolor = System.Drawing.Color.White;
             this.btnSetting.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -257,7 +257,7 @@
             this.Transition3.SetDecoration(this.pnlogout, BunifuAnimatorNS.DecorationType.None);
             this.pnlogout.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlogout.Location = new System.Drawing.Point(0, 836);
-            this.pnlogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlogout.Margin = new System.Windows.Forms.Padding(4);
             this.pnlogout.Name = "pnlogout";
             this.pnlogout.Size = new System.Drawing.Size(376, 50);
             this.pnlogout.TabIndex = 2;
@@ -288,7 +288,7 @@
             this.bunifuFlatButton2.IconZoom = 90D;
             this.bunifuFlatButton2.IsTab = false;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(57, 0);
-            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(5);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -326,7 +326,7 @@
             this.btnExit.IconZoom = 90D;
             this.btnExit.IsTab = false;
             this.btnExit.Location = new System.Drawing.Point(0, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(5);
             this.btnExit.Name = "btnExit";
             this.btnExit.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnExit.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -350,7 +350,7 @@
             this.pnReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnReport.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnReport.Location = new System.Drawing.Point(0, 399);
-            this.pnReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnReport.Margin = new System.Windows.Forms.Padding(4);
             this.pnReport.Name = "pnReport";
             this.pnReport.Size = new System.Drawing.Size(376, 59);
             this.pnReport.TabIndex = 14;
@@ -381,7 +381,7 @@
             this.btnreportYears.IconZoom = 90D;
             this.btnreportYears.IsTab = false;
             this.btnreportYears.Location = new System.Drawing.Point(0, 118);
-            this.btnreportYears.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnreportYears.Margin = new System.Windows.Forms.Padding(5);
             this.btnreportYears.Name = "btnreportYears";
             this.btnreportYears.Normalcolor = System.Drawing.Color.Gray;
             this.btnreportYears.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -420,7 +420,7 @@
             this.btnReportMonth.IconZoom = 90D;
             this.btnReportMonth.IsTab = false;
             this.btnReportMonth.Location = new System.Drawing.Point(0, 59);
-            this.btnReportMonth.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnReportMonth.Margin = new System.Windows.Forms.Padding(5);
             this.btnReportMonth.Name = "btnReportMonth";
             this.btnReportMonth.Normalcolor = System.Drawing.Color.Gray;
             this.btnReportMonth.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -459,7 +459,7 @@
             this.btnAllReport.IconZoom = 90D;
             this.btnAllReport.IsTab = false;
             this.btnAllReport.Location = new System.Drawing.Point(0, 0);
-            this.btnAllReport.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAllReport.Margin = new System.Windows.Forms.Padding(5);
             this.btnAllReport.Name = "btnAllReport";
             this.btnAllReport.Normalcolor = System.Drawing.Color.White;
             this.btnAllReport.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -482,7 +482,7 @@
             this.pnExpent.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnExpent.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnExpent.Location = new System.Drawing.Point(0, 340);
-            this.pnExpent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnExpent.Margin = new System.Windows.Forms.Padding(4);
             this.pnExpent.Name = "pnExpent";
             this.pnExpent.Size = new System.Drawing.Size(376, 59);
             this.pnExpent.TabIndex = 18;
@@ -513,7 +513,7 @@
             this.btnExpenAndIncome.IconZoom = 90D;
             this.btnExpenAndIncome.IsTab = false;
             this.btnExpenAndIncome.Location = new System.Drawing.Point(0, 0);
-            this.btnExpenAndIncome.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnExpenAndIncome.Margin = new System.Windows.Forms.Padding(5);
             this.btnExpenAndIncome.Name = "btnExpenAndIncome";
             this.btnExpenAndIncome.Normalcolor = System.Drawing.Color.White;
             this.btnExpenAndIncome.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -541,7 +541,7 @@
             this.pnRoom.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnRoom.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnRoom.Location = new System.Drawing.Point(0, 281);
-            this.pnRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnRoom.Margin = new System.Windows.Forms.Padding(4);
             this.pnRoom.Name = "pnRoom";
             this.pnRoom.Size = new System.Drawing.Size(376, 59);
             this.pnRoom.TabIndex = 15;
@@ -652,7 +652,7 @@
             this.btnRoomPrice.IconZoom = 90D;
             this.btnRoomPrice.IsTab = false;
             this.btnRoomPrice.Location = new System.Drawing.Point(0, 177);
-            this.btnRoomPrice.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnRoomPrice.Margin = new System.Windows.Forms.Padding(5);
             this.btnRoomPrice.Name = "btnRoomPrice";
             this.btnRoomPrice.Normalcolor = System.Drawing.Color.Gray;
             this.btnRoomPrice.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -692,7 +692,7 @@
             this.btnAddRoom.IconZoom = 90D;
             this.btnAddRoom.IsTab = false;
             this.btnAddRoom.Location = new System.Drawing.Point(0, 118);
-            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnAddRoom.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddRoom.Name = "btnAddRoom";
             this.btnAddRoom.Normalcolor = System.Drawing.Color.Gray;
             this.btnAddRoom.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -732,7 +732,7 @@
             this.btnCheckRoom.IconZoom = 90D;
             this.btnCheckRoom.IsTab = false;
             this.btnCheckRoom.Location = new System.Drawing.Point(0, 59);
-            this.btnCheckRoom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnCheckRoom.Margin = new System.Windows.Forms.Padding(5);
             this.btnCheckRoom.Name = "btnCheckRoom";
             this.btnCheckRoom.Normalcolor = System.Drawing.Color.Gray;
             this.btnCheckRoom.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -772,7 +772,7 @@
             this.btnRoom.IconZoom = 90D;
             this.btnRoom.IsTab = false;
             this.btnRoom.Location = new System.Drawing.Point(0, 0);
-            this.btnRoom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnRoom.Margin = new System.Windows.Forms.Padding(5);
             this.btnRoom.Name = "btnRoom";
             this.btnRoom.Normalcolor = System.Drawing.Color.White;
             this.btnRoom.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -795,7 +795,7 @@
             this.pncheckout.Dock = System.Windows.Forms.DockStyle.Top;
             this.pncheckout.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pncheckout.Location = new System.Drawing.Point(0, 222);
-            this.pncheckout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pncheckout.Margin = new System.Windows.Forms.Padding(4);
             this.pncheckout.Name = "pncheckout";
             this.pncheckout.Size = new System.Drawing.Size(376, 59);
             this.pncheckout.TabIndex = 14;
@@ -806,7 +806,7 @@
             this.btncheckoutNote.BackColor = System.Drawing.Color.White;
             this.btncheckoutNote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btncheckoutNote.BorderRadius = 0;
-            this.btncheckoutNote.ButtonText = "Suppliyer Managment";
+            this.btncheckoutNote.ButtonText = "Supplier Managment";
             this.btncheckoutNote.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Transition3.SetDecoration(this.btncheckoutNote, BunifuAnimatorNS.DecorationType.None);
             this.Transition2.SetDecoration(this.btncheckoutNote, BunifuAnimatorNS.DecorationType.None);
@@ -826,7 +826,7 @@
             this.btncheckoutNote.IconZoom = 90D;
             this.btncheckoutNote.IsTab = false;
             this.btncheckoutNote.Location = new System.Drawing.Point(0, 0);
-            this.btncheckoutNote.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btncheckoutNote.Margin = new System.Windows.Forms.Padding(5);
             this.btncheckoutNote.Name = "btncheckoutNote";
             this.btncheckoutNote.Normalcolor = System.Drawing.Color.White;
             this.btncheckoutNote.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -834,7 +834,7 @@
             this.btncheckoutNote.selected = false;
             this.btncheckoutNote.Size = new System.Drawing.Size(376, 59);
             this.btncheckoutNote.TabIndex = 0;
-            this.btncheckoutNote.Text = "Suppliyer Managment";
+            this.btncheckoutNote.Text = "Supplier Managment";
             this.btncheckoutNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncheckoutNote.Textcolor = System.Drawing.Color.Black;
             this.btncheckoutNote.TextFont = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -849,7 +849,7 @@
             this.pnBook.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnBook.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnBook.Location = new System.Drawing.Point(0, 163);
-            this.pnBook.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnBook.Margin = new System.Windows.Forms.Padding(4);
             this.pnBook.Name = "pnBook";
             this.pnBook.Size = new System.Drawing.Size(376, 59);
             this.pnBook.TabIndex = 4;
@@ -880,7 +880,7 @@
             this.btnbook.IconZoom = 90D;
             this.btnbook.IsTab = false;
             this.btnbook.Location = new System.Drawing.Point(0, 0);
-            this.btnbook.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnbook.Margin = new System.Windows.Forms.Padding(5);
             this.btnbook.Name = "btnbook";
             this.btnbook.Normalcolor = System.Drawing.Color.White;
             this.btnbook.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -905,7 +905,7 @@
             this.pnStay.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnStay.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnStay.Location = new System.Drawing.Point(0, 103);
-            this.pnStay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnStay.Margin = new System.Windows.Forms.Padding(4);
             this.pnStay.Name = "pnStay";
             this.pnStay.Size = new System.Drawing.Size(376, 60);
             this.pnStay.TabIndex = 3;
@@ -936,7 +936,7 @@
             this.btncheckINData.IconZoom = 90D;
             this.btncheckINData.IsTab = false;
             this.btncheckINData.Location = new System.Drawing.Point(0, 118);
-            this.btncheckINData.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btncheckINData.Margin = new System.Windows.Forms.Padding(5);
             this.btncheckINData.Name = "btncheckINData";
             this.btncheckINData.Normalcolor = System.Drawing.Color.Gray;
             this.btncheckINData.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -976,7 +976,7 @@
             this.btncheckin.IconZoom = 90D;
             this.btncheckin.IsTab = false;
             this.btncheckin.Location = new System.Drawing.Point(0, 59);
-            this.btncheckin.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btncheckin.Margin = new System.Windows.Forms.Padding(5);
             this.btncheckin.Name = "btncheckin";
             this.btncheckin.Normalcolor = System.Drawing.Color.Gray;
             this.btncheckin.OnHovercolor = System.Drawing.Color.DarkSlateBlue;
@@ -1016,7 +1016,7 @@
             this.btnstay.IconZoom = 90D;
             this.btnstay.IsTab = false;
             this.btnstay.Location = new System.Drawing.Point(0, 0);
-            this.btnstay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnstay.Margin = new System.Windows.Forms.Padding(5);
             this.btnstay.Name = "btnstay";
             this.btnstay.Normalcolor = System.Drawing.Color.White;
             this.btnstay.OnHovercolor = System.Drawing.Color.SlateBlue;
@@ -1038,7 +1038,7 @@
             this.Transition3.SetDecoration(this.pnLogo, BunifuAnimatorNS.DecorationType.None);
             this.pnLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnLogo.Location = new System.Drawing.Point(0, 0);
-            this.pnLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnLogo.Margin = new System.Windows.Forms.Padding(4);
             this.pnLogo.Name = "pnLogo";
             this.pnLogo.Size = new System.Drawing.Size(376, 103);
             this.pnLogo.TabIndex = 2;
@@ -1051,7 +1051,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::MartSystem.Properties.Resources.logo;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(376, 103);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1067,7 +1067,7 @@
             this.Transition3.SetDecoration(this.panel1, BunifuAnimatorNS.DecorationType.None);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(376, 836);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1084, 50);
             this.panel1.TabIndex = 13;
@@ -1100,7 +1100,7 @@
             this.Transition3.SetDecoration(this.Pntopbar, BunifuAnimatorNS.DecorationType.None);
             this.Pntopbar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pntopbar.Location = new System.Drawing.Point(376, 0);
-            this.Pntopbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pntopbar.Margin = new System.Windows.Forms.Padding(4);
             this.Pntopbar.Name = "Pntopbar";
             this.Pntopbar.Size = new System.Drawing.Size(1084, 52);
             this.Pntopbar.TabIndex = 14;
@@ -1173,22 +1173,22 @@
             // 
             this.Transition1.AnimationType = BunifuAnimatorNS.AnimationType.Rotate;
             this.Transition1.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(50);
-            animation3.RotateCoeff = 1F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 1F;
-            this.Transition1.DefaultAnimation = animation3;
+            animation6.AnimateOnlyDifferences = true;
+            animation6.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.BlindCoeff")));
+            animation6.LeafCoeff = 0F;
+            animation6.MaxTime = 1F;
+            animation6.MinTime = 0F;
+            animation6.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicCoeff")));
+            animation6.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation6.MosaicShift")));
+            animation6.MosaicSize = 0;
+            animation6.Padding = new System.Windows.Forms.Padding(50);
+            animation6.RotateCoeff = 1F;
+            animation6.RotateLimit = 0F;
+            animation6.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.ScaleCoeff")));
+            animation6.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation6.SlideCoeff")));
+            animation6.TimeCoeff = 0F;
+            animation6.TransparencyCoeff = 1F;
+            this.Transition1.DefaultAnimation = animation6;
             this.Transition1.Interval = 1000;
             this.Transition1.TimeStep = 1F;
             // 
@@ -1196,22 +1196,22 @@
             // 
             this.Transition2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.Transition2.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 20;
-            animation2.Padding = new System.Windows.Forms.Padding(30);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.Transition2.DefaultAnimation = animation2;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 20;
+            animation5.Padding = new System.Windows.Forms.Padding(30);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.Transition2.DefaultAnimation = animation5;
             this.Transition2.Interval = 1000;
             this.Transition2.TimeStep = 1F;
             // 
@@ -1219,22 +1219,22 @@
             // 
             this.Transition3.AnimationType = BunifuAnimatorNS.AnimationType.Scale;
             this.Transition3.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.Transition3.DefaultAnimation = animation1;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.Transition3.DefaultAnimation = animation4;
             this.Transition3.Interval = 1000;
             this.Transition3.TimeStep = 1F;
             // 
@@ -1254,7 +1254,7 @@
             this.Transition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.Transition3.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
