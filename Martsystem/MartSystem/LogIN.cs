@@ -17,6 +17,7 @@ namespace MartSystem
         public LogIN()
         {
             InitializeComponent();
+            
         }
 
         private void btnExite_Click(object sender, EventArgs e)
@@ -120,6 +121,12 @@ namespace MartSystem
         private void txtpass_MouseDown(object sender, MouseEventArgs e)
         {
 
+        }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btnLogIn_Click(null, null);
         }
     }
 }
