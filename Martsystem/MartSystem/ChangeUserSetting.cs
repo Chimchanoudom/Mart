@@ -65,7 +65,7 @@ namespace MartSystem
                     break;
 
                 case "days":
-                    using (StreamWriter sw = new StreamWriter("DaysAlmostExp.avi.avi"))
+                    using (StreamWriter sw = new StreamWriter("DaysAlmostExp.avi"))
                     {
                         sw.WriteLine(txtRate.Text);
                     };

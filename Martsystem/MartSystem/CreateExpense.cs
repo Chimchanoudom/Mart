@@ -135,8 +135,10 @@ namespace MartSystem
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
             if (dgvExpenseDetail.Rows.Count > 0)
             {
+                string stNow = string.Format("{0:yyyy/MM/dd hh:mm:ss tt}", DateTime.Now);
                 if (dataRow!=null)
                 {
                     sql = "delete from expenseDetail where expenseid='" + lbExpenseID.Text + "'";
@@ -144,16 +146,17 @@ namespace MartSystem
                     sql += "update expense set Total=" + txtTotal.Text + " where expenseID='" + lbExpenseID.Text + "'";
 
 
+                    sql += "insert into ExpenseLog (editDate,editBy,ExpenseID) values ('" + stNow + "','" + UserLoginDetail.empID + "','" + lbExpenseID.Text + "');";
+
                     insertDataIntoExpenseDetail();
                     Close();
 
                     return;
                 }
+               
+                sql = "insert into Expense values('"+lbExpenseID.Text+"','"+stNow+"',"+total+",'"+UserLoginDetail.empID+"')";
 
-
-             
-                string stNow = string.Format("{0:yyyy/MM/dd hh:mm:ss tt}", DateTime.Now);
-                sql = "insert into Expense values('"+lbExpenseID.Text+"','"+stNow+"',"+total+")";
+               
 
                
                 insertDataIntoExpenseDetail();
@@ -219,20 +222,20 @@ namespace MartSystem
                     double subTotal = double.Parse(dataReader.GetValue(1) + "");
                     dgvExpenseDetail.Rows.Add(dataReader.GetString(0),subTotal);
                     total += subTotal;
-                    txtTotal.Text = subTotal.ToString("#,##0.00");
+                   
                 }
                 dataCon.Con.Close();
-
+                txtTotal.Text = total.ToString("#,##0.00");
                 return;
             }
                 
 
-            getInvoiceID();
+            getExpenseID();
 
             
         }
 
-        void getInvoiceID()
+        void getExpenseID()
         {
             sql = "newGetAutoID 'Expenseid','_','expense';";
 

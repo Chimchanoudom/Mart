@@ -68,6 +68,7 @@ namespace MartSystem
 
                 MessageBox.Show("New product added", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+               
                 copyImgToFolder();
 
                 proID++;
@@ -78,14 +79,14 @@ namespace MartSystem
 
         void copyImgToFolder()
         {
-           
+            if (imgPath == "")
+                return;
 
             string destFile = fileDir + @"\" + fileName;
-            try
+
+            if (!File.Exists(destFile))
             {
-                File.Copy(imgPath, destFile, true);
-            }
-            catch (ArgumentException) {
+                File.Copy(imgPath, destFile, false);
             }
             
         }
@@ -211,7 +212,8 @@ namespace MartSystem
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ImageBox.Image = Properties.Resources.noImg;
-            imgPath = "";
+            fileName=imgPath = "";
+
         }
 
         private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
@@ -247,7 +249,7 @@ namespace MartSystem
 
                 btnAdd.Text = "Cancel";
 
-               
+                fileName = (dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value as Image).Tag + "";
             }
             else
             {
@@ -270,6 +272,9 @@ namespace MartSystem
             ComboboxItem category = cbCategory.SelectedItem as ComboboxItem;
             ComboboxItem brand = cbBrand.SelectedItem as ComboboxItem;
 
+            
+
+
             sql = "update Product set ProName='"+txtProductName.Text+"',QtyType='"+txtQtyType.Text+"',UnitPrice="+txtUnitPrice.Text+",CatID='"+category.Value+"',BrandID='"+brand.Value+"',Barcode='"+txtBarcode.Text+"',Image='"+fileName+"' where proid='"+lbProductID.Text+"';";
 
             dataCon.ExecuteActionQry(sql,ref error);
@@ -278,6 +283,8 @@ namespace MartSystem
                 MessageBox.Show("Edit successfull", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 int selectedRowIndex = dgvProduct.SelectedRows[0].Index;
 
+
+                
                 copyImgToFolder();
 
                 string imgFileNameInSelectedRow = ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Tag+"";
@@ -290,14 +297,14 @@ namespace MartSystem
                 dgvProduct.Rows[selectedRowIndex].Cells["Brand"].Value = brand;
 
                 
-                if (imgFileNameInSelectedRow != "")
+                if (imgFileNameInSelectedRow != fileName&& imgFileNameInSelectedRow!="")
                 {
                     ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Dispose();
                     File.Delete(fileDir + imgFileNameInSelectedRow);
                 }
 
                 dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value = ImageBox.Image;
-                
+
             }
         }
 
@@ -316,22 +323,10 @@ namespace MartSystem
             if (dialogResult == DialogResult.No)
                 return;
 
-            dataCon.Con.Open();
-            sql = "select count(*) from invoiceDetail where proID='" + lbProductID.Text + "';";
-            dataReader = dataCon.ExecuteQry(sql);
-            dataReader.Read();
-            int countSoldProduct = dataReader.GetInt32(0);
-            dataCon.Con.Close();
+            int selectedRowIndex = dgvProduct.SelectedRows[0].Index;
+            int selectedQty = int.Parse(dtProduct.Rows[selectedRowIndex]["Quantity"] + "");
 
-
-            dataCon.Con.Open();
-            sql = "select count(*) from importDetail where proID='" + lbProductID.Text + "';";
-            dataReader = dataCon.ExecuteQry(sql);
-            dataReader.Read();
-            int countImportProduct = dataReader.GetInt32(0);
-            dataCon.Con.Close();
-
-            if (countSoldProduct > 0||countImportProduct>0)
+            if (selectedQty>0)
             {
                 MessageBox.Show("Cannot delete product", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -343,11 +338,12 @@ namespace MartSystem
             dataCon.ExecuteActionQry(sql, ref error);
             if (!error)
             {
-                int selectedRowIndex = dgvProduct.SelectedRows[0].Index;
+                
 
                 string imgFileNameInSelectedRow = ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Tag + "";
 
                 ((Image)dgvProduct.Rows[selectedRowIndex].Cells["Image"].Value).Dispose();
+                ImageBox.Image = Properties.Resources.noImg;
                 if (imgFileNameInSelectedRow != "")
                 {
                     File.Delete(fileDir + imgFileNameInSelectedRow);

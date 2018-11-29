@@ -70,6 +70,11 @@ namespace MartSystem
         {
             if (dataCat.SelectedRows.Count == 1)
             {
+                if (RestrictionClass.restrictActionOnDefualtRow(dataCat.SelectedRows))
+                {
+                    return;
+                }
+
                 int index = dataCat.SelectedRows[0].Index;
                 dt.Rows[index].SetField("CatID", lblID.Text);
                 dt.Rows[index].SetField("CatName", txtCatName.Text);
@@ -87,6 +92,11 @@ namespace MartSystem
         {
             if (dataCat.SelectedRows.Count > 0)
             {
+                if (RestrictionClass.restrictActionOnDefualtRow(dataCat.SelectedRows))
+                {
+                    return;
+                }
+
                 DialogResult dir = MessageBox.Show("Do you want to delete " + dataCat.SelectedRows.Count + " Rows?", "Your Data will be delete", MessageBoxButtons.YesNo);
                 if (dir == DialogResult.Yes)
                 {

@@ -368,7 +368,7 @@ namespace MartSystem
             }
             else
             {
-                txtBarcode.Text = txtBarcode.WatermarkedText;
+                
             }
         }
 
@@ -533,9 +533,6 @@ namespace MartSystem
 
             if (recieve >= total && total > 0)
             {
-                
-
-                
                 double recieveKh = FormatStringToNumber(txtRecieveKh.Text);
                 double recieveEng = FormatStringToNumber(txtRecieveEng.Text);
 

@@ -182,6 +182,8 @@ namespace MartSystem
 
                     fileLocation = dataRow.Cells["Image"].Value.ToString();
                     ImageBox.Image =(fileLocation!= string.Empty) ?Image.FromFile( dataRow.Cells["Image"].Value.ToString()) : MartSystem.Properties.Resources.employee;
+                    if (dataRow.Cells["Position"].Value.ToString().ToLower() == "admin")
+                        cbxPosition.Items.Add("Admin");
                     cbxPosition.SelectedItem= dataRow.Cells["Position"].Value.ToString();
                     txtSalary.Text= dataRow.Cells["Basic Salary"].Value.ToString();
                     CheckActive.Checked = Convert.ToBoolean(dataRow.Cells["Active"].Value.ToString());
@@ -202,6 +204,7 @@ namespace MartSystem
             else
             {
                 lblID.Text = ID;
+                cbxPosition.Items.Remove("Admin");
                 Clear();
             }
             

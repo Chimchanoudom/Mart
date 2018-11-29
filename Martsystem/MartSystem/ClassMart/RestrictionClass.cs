@@ -73,6 +73,18 @@ namespace MartSystem
                     e.KeyChar = '\0';
             }
         }
+        public static bool restrictActionOnDefualtRow(DataGridViewSelectedRowCollection dgvRow)
+        {
+            foreach (DataGridViewRow row in dgvRow)
+            {
+                if (row.Cells["ID"].Value + "" == "1")
+                {
+                    MessageBox.Show("Cannot edit or delete defualt row");
+                    return true;
+                }
+            }
+            return false;
+        }
 
         public static string GetIntFromKhNumber(string text)
         {

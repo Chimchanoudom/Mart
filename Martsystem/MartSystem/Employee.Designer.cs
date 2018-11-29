@@ -436,6 +436,7 @@
             this.cbxPosition.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxPosition.FormattingEnabled = true;
             this.cbxPosition.Items.AddRange(new object[] {
+            "Admin",
             "Cashire",
             "Stock Holder"});
             this.cbxPosition.Location = new System.Drawing.Point(163, 6);

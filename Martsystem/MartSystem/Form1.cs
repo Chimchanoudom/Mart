@@ -29,8 +29,8 @@ namespace MartSystem
         
         private void btnExit_Click(object sender, EventArgs e)
         {
-            // Application.Restart();
-            Application.Exit();
+            Application.Restart();
+            //Application.Exit();
         }
 
         private void Form1_Load(object sender, EventArgs e)

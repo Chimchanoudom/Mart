@@ -22,7 +22,7 @@ namespace MartSystem
         string sql;
         private void ExpenseData_Load(object sender, EventArgs e)
         {
-            sql = "select ExpenseId as 'Expense ID', DateCreate as 'Date Created',total as 'Total' from expense";
+            sql = "select ExpenseId as 'Expense ID', DateCreate as 'Date Created',total as 'Total',e.Fname+' '+e.Lname 'Employee'  from expense ex join Employee e on ex.EmpID=e.EmpID;";
 
             SqlDataAdapter dataAdaptor = new SqlDataAdapter(sql,dataCon.Con);
 
@@ -52,7 +52,7 @@ namespace MartSystem
 
         private void dgvExpenseData_SelectionChanged(object sender, EventArgs e)
         {
-            editToolStripMenuItem.Visible = dgvExpenseData.SelectedRows.Count == 1;
+            logToolStripMenuItem.Visible= editToolStripMenuItem.Visible = dgvExpenseData.SelectedRows.Count == 1;
             deleteToolStripMenuItem.Visible= dgvExpenseData.SelectedRows.Count >= 1;
         }
 
@@ -69,13 +69,11 @@ namespace MartSystem
 
             if (dialog == DialogResult.Yes)
             {
+                int selectedRowIndex = dgvExpenseData.SelectedRows[0].Index;
                 sql = "delete from expense where expenseID in(";
 
-                for(int i = 0; i < dgvExpenseData.SelectedRows.Count; i++)
-                {
-                    int selectedRowIndex = dgvExpenseData.SelectedRows[i].Index;
-                    sql +="'" +dgvExpenseData.Rows[selectedRowIndex].Cells["Expense ID"].Value + "',";
-                }
+                sql += "'" + dgvExpenseData.Rows[selectedRowIndex].Cells["Expense ID"].Value + "',";
+
 
                 sql = sql.Substring(0,sql.Length - 1) + ");";
 
@@ -83,10 +81,7 @@ namespace MartSystem
                 dataCon.ExecuteActionQry(sql, ref error);
                 if (!error)
                 {
-                    foreach(DataGridViewRow temp in dgvExpenseData.SelectedRows)
-                    {
-                        dgvExpenseData.Rows.Remove(temp);
-                    }
+                    dtExpense.Rows.RemoveAt(selectedRowIndex);
                     MessageBox.Show("Deleted successful", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
@@ -124,6 +119,17 @@ namespace MartSystem
 
             if (searchDate.DialogResult != DialogResult.Yes)
                 rndID.Checked = true;
+        }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selectedRowIndex = dgvExpenseData.SelectedRows[0].Index;
+            string id = dgvExpenseData.Rows[selectedRowIndex].Cells["Expense ID"].Value + "";
+            sql = "select ExpenseLogID 'Invoice Log ID',editdate 'Edit Date',CONCAT(fname,' ',Lname) 'Edit by' from expenseLog ex join Employee e on ex.EditBy=e.EmpID where expenseId='"+id+"';";
+
+            LogData expenseLog = new LogData("Log for Expense " + id, sql);
+
+            expenseLog.ShowDialog();
         }
     }
 }

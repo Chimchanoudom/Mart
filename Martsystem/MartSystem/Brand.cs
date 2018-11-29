@@ -67,8 +67,17 @@ namespace MartSystem
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
+
+
             if (dataBrand.SelectedRows.Count == 1)
             {
+                if (RestrictionClass.restrictActionOnDefualtRow(dataBrand.SelectedRows))
+                {
+                    return;
+                }
+
+
                 int index = dataBrand.SelectedRows[0].Index;
                 dt.Rows[index].SetField("BrandID", lblID.Text);
                 dt.Rows[index].SetField("BrandName", txtBarndName.Text);
@@ -82,8 +91,15 @@ namespace MartSystem
             }
         }
 
+        
+
         private void btndelete_Click(object sender, EventArgs e)
         {
+            if (RestrictionClass.restrictActionOnDefualtRow(dataBrand.SelectedRows))
+            {
+                return;
+            }
+
             if (dataBrand.SelectedRows.Count > 0)
             {
                 DialogResult dir = MessageBox.Show("Do you want to delete " + dataBrand.SelectedRows.Count + " Rows?", "Your Data will be delete", MessageBoxButtons.YesNo);

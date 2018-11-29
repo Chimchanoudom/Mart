@@ -54,14 +54,16 @@ namespace MartSystem
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            foreach(DataRow Dr in dt.Rows)
+            bool incorrectedInfo = false;
+            foreach (DataRow Dr in dt.Rows)
             {
                 //MessageBox.Show(Dr["UserAcc"].ToString());
                 //MessageBox.Show(Dr["Pwd"].ToString());
-                if ((txtuserName.Text.ToLower() ==Dr["UserAcc"].ToString().ToLower()&&txtpass.Text.ToLower()==Dr["Pwd"].ToString().ToLower()))
+                if ((txtuserName.Text== Dr["UserAcc"].ToString() && txtpass.Text == Dr["Pwd"].ToString()))
+                {
+                    if (Convert.ToBoolean(Dr["Active"]) == true)
                     {
-                    if (Convert.ToBoolean(Dr["Active"]) == true){
-                        MessageBox.Show("Welcome "+Dr["Fname"]+" "+Dr["Lname"]);
+                        MessageBox.Show("Welcome " + Dr["Fname"] + " " + Dr["Lname"]);
                         Dom_SqlClass.empID = Dr["EmpID"].ToString();
                         Dom_SqlClass.fName = Dr["Fname"].ToString();
                         Dom_SqlClass.lName = Dr["Lname"].ToString();
@@ -70,6 +72,7 @@ namespace MartSystem
                         this.DialogResult = DialogResult.OK;
                         Form1 f = new Form1();
                         f.Show();
+                        incorrectedInfo = false;
                         break;
                     }
                     else
@@ -80,10 +83,13 @@ namespace MartSystem
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect Password or User Name !");
-                    break;
+                    incorrectedInfo = true;
+                    //MessageBox.Show("Incorrect Password or User Name !");
+                    //break;
                 }
             }
+            if (incorrectedInfo)
+                MessageBox.Show("Incorrect Password or User Name !");
         }
         DataTable dt;
         private void LogIN_Load(object sender, EventArgs e)
@@ -94,7 +100,7 @@ namespace MartSystem
 
             string fileDir = AppDomain.CurrentDomain.BaseDirectory + @"Image\Product\";
             DirectoryInfo di =Directory.CreateDirectory(fileDir);
-           
+            dataCon.getRateAndDaysAlmostExp();
         }
 
         private void txtpass_MouseClick(object sender, MouseEventArgs e)
@@ -119,7 +125,8 @@ namespace MartSystem
 
         private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                btnLogIn_Click(null, null);
         }
     }
 }
