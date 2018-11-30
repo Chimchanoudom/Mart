@@ -53,9 +53,15 @@ namespace MartSystem
                     e.KeyChar = '\0';
             }
 
-            public static void restrictOnKeyPress(string restrictSting, KeyPressEventArgs e)
+            public static void restrictOnKeyPress(string restrictString, KeyPressEventArgs e)
             {
-                if (restrictSting.IndexOf(e.KeyChar) >= 0)
+                if (restrictString.IndexOf(e.KeyChar) >= 0)
+                    e.KeyChar = '\0';
+            }
+
+            public static void allowOnlyKeyPress(string allowString, KeyPressEventArgs e)
+            {
+                if (allowString.IndexOf(e.KeyChar) ==-1)
                     e.KeyChar = '\0';
             }
 
@@ -130,6 +136,17 @@ namespace MartSystem
             }
             return temp;
         }
+
+
+        public static bool validateBetweenTwoDate(DateTime from,DateTime to)
+        {
+            from = dataCon.getOnlyDatePart(from);
+            to = dataCon.getOnlyDatePart(to);
+
+            return from > to;
+        }
+
+        
 
         public static string GetIntNumber(string text)
         {

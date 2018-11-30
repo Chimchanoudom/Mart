@@ -204,6 +204,12 @@
     <Compile Include="Quantity Type.Designer.cs">
       <DependentUpon>Quantity Type.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchAlmostExpired.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchAlmostExpired.Designer.cs">
+      <DependentUpon>SearchAlmostExpired.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchDate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -289,6 +295,9 @@
     </Compile>
     <EmbeddedResource Include="Quantity Type.resx">
       <DependentUpon>Quantity Type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchAlmostExpired.resx">
+      <DependentUpon>SearchAlmostExpired.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchDate.resx">
       <DependentUpon>SearchDate.cs</DependentUpon>

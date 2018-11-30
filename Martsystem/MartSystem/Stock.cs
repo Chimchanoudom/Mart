@@ -19,16 +19,19 @@ namespace MartSystem
 
         }
 
+        public Stock(string proName)
+        {
+            InitializeComponent();
+            this.proName = proName;
+        }
+        string proName;
 
         DataTable dtStock = new DataTable();
         string sql;
+        
         private void Stock_Load(object sender, EventArgs e)
         {
-           
-
-            
-
-             sql = "select stockid 'Stock ID', ProName 'Product Name',importDate 'Import Date',s.Qty 'Quantity',s.UnitPrice 'Unit Price',ExpiredDate 'Expire Date' ,case when ExpiredDate<=(select convert(date,GETDATE())) then '1' else '0' end 'isExpired',case when (ExpiredDate<=(select convert(date,GETDATE()+"+dataCon.daysAlmostExp+")) and ExpiredDate>(select convert(date,GETDATE())))  then '1' else '0' end 'isAlmostExpired' from stock s join Product p on s.ProID=p.ProID join Import i on s.ImportID=i.ImportID ;";
+             sql = "select stockid 'Stock ID', ProName 'Product Name',importDate 'Import Date',s.Qty 'Quantity',s.UnitPrice 'Unit Price',ExpiredDate 'Expire Date' ,case when ExpiredDate<=(select convert(date,GETDATE())) then '1' else '0' end 'isExpired' from stock s join Product p on s.ProID=p.ProID join Import i on s.ImportID=i.ImportID ;";
 
 
             SqlDataAdapter dataAdaptor = new SqlDataAdapter(sql,dataCon.Con);
@@ -38,8 +41,7 @@ namespace MartSystem
             dgvStock.DataSource = dtStock;
 
            
-            dgvStock.Columns["isExpired"].Visible = 
-                dgvStock.Columns["isAlmostExpired"].Visible = false;
+            dgvStock.Columns["isExpired"].Visible = false;
 
            
 
@@ -49,7 +51,11 @@ namespace MartSystem
 
             ChangeRowForeColor();
 
-
+            if (proName != "")
+            {
+                txtSearch.Text = proName;
+                btnSearch.PerformClick();
+            }
 
         }
 
@@ -60,31 +66,32 @@ namespace MartSystem
             {
                 if (row.Cells["isExpired"].Value + "" == "1")
                     row.DefaultCellStyle.ForeColor = Color.Red;
-                else if (row.Cells["isAlmostExpired"].Value + "" == "1")
-                    row.DefaultCellStyle.ForeColor = Color.Gold;
             }
         }
+
+        DateTime[] searchedDate = new DateTime[2];
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string filter = "";
-            if (rndProductName.Checked) filter = "[Product Name]=";
+            if (rndProductName.Checked) filter = "[Product Name]";
 
             if (rndImportDate.Checked)
             {
                 string[] st = txtSearch.Text.Split('-');
                 filter = "[Import Date]>='" + st[0] + "' AND [Import Date] <= '" + st[1] + "'";
+                
             }
-            else if (rndExpiredDate.Checked)
+            else if (rndExpiredDate.Checked||rndAlmostExpired.Checked)
             {
                 string[] st = txtSearch.Text.Split('-');
                 filter = "[Expire Date]>='" + st[0] + "' AND [Expire Date] <= '" + st[1] + "'";
+               
             }
             else
             {
-               if (rndProductName.Checked) filter += "'" + txtSearch.Text + "'";
-               else if (rndExpired.Checked) filter = "[isExpired]='1'";
-               else if (rndAlmostExpired.Checked) filter = "[isAlmostExpired]='1'";
+                if (rndProductName.Checked) filter += " like '%" + txtSearch.Text + "%'";
+                else if (rndExpired.Checked) filter = "[isExpired]='1'";
             }
 
             try
@@ -99,11 +106,6 @@ namespace MartSystem
             
         }
 
-        private void rndProductName_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dtStock.DefaultView.RowFilter = string.Empty;
@@ -112,11 +114,12 @@ namespace MartSystem
 
         private void rndImportDate_Click(object sender, EventArgs e)
         {
-            SearchDate searchDate = new SearchDate(txtSearch);
+            SearchDate searchDate = new SearchDate(searchedDate,txtSearch,btnSearch);
             searchDate.ShowDialog();
 
             if (searchDate.DialogResult != DialogResult.Yes)
                 rndProductName.Checked = true;
+
         }
 
         private void dgvStock_SelectionChanged(object sender, EventArgs e)
@@ -158,6 +161,26 @@ namespace MartSystem
         private void dgvStock_Sorted(object sender, EventArgs e)
         {
             ChangeRowForeColor();
+        }
+
+        private void rndAlmostExpired_Click(object sender, EventArgs e)
+        {
+            
+            SearchAlmostExpired expired = new SearchAlmostExpired(txtSearch,btnSearch);
+
+            expired.ShowDialog();
+
+            if (expired.DialogResult!= DialogResult.Yes)
+            {
+                rndProductName.Checked = true;
+            }
+
+
+        }
+
+        private void rndProductName_Click(object sender, EventArgs e)
+        {
+            txtSearch.Text = "";
         }
     }
 }

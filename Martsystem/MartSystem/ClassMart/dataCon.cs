@@ -27,6 +27,8 @@ namespace MartSystem
             return dt.Day.ToString("00") + "/" + dt.Month.ToString("00") + "/" + dt.Year + " " + dt.Hour.ToString("00") + ":" + dt.Minute.ToString("00");
         }
 
+
+
         public static SqlDataReader ExecuteQry(string qry)
         {
             SqlDataReader dataReader = null;
@@ -118,6 +120,8 @@ namespace MartSystem
                 con.Close();
             }
         }
+
+
 
         public static class exActionQuery
         {
@@ -238,6 +242,11 @@ namespace MartSystem
                 return error;                    
             }
            
+        }
+
+        public static DateTime getOnlyDatePart(DateTime date)
+        {
+            return new DateTime(date.Year, date.Month, date.Day, 0, 0, 0);
         }
     }      
 }

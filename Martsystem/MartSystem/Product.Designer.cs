@@ -36,6 +36,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rndProName = new System.Windows.Forms.RadioButton();
             this.rndBrand = new System.Windows.Forms.RadioButton();
             this.rndCategory = new System.Windows.Forms.RadioButton();
             this.rndBarCode = new System.Windows.Forms.RadioButton();
@@ -74,7 +75,9 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.rndProName = new System.Windows.Forms.RadioButton();
+            this.cmsProduct = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stockQuantityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -86,6 +89,7 @@
             this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.cmsProduct.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -188,6 +192,18 @@
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Filter Condition";
+            // 
+            // rndProName
+            // 
+            this.rndProName.AutoSize = true;
+            this.rndProName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rndProName.Location = new System.Drawing.Point(102, 46);
+            this.rndProName.Margin = new System.Windows.Forms.Padding(4);
+            this.rndProName.Name = "rndProName";
+            this.rndProName.Size = new System.Drawing.Size(175, 27);
+            this.rndProName.TabIndex = 1;
+            this.rndProName.Text = "Product Name";
+            this.rndProName.UseVisualStyleBackColor = true;
             // 
             // rndBrand
             // 
@@ -623,6 +639,7 @@
             this.dgvProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduct.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(255)))));
             this.dgvProduct.ColumnHeadersHeight = 33;
+            this.dgvProduct.ContextMenuStrip = this.cmsProduct;
             this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProduct.Location = new System.Drawing.Point(0, 0);
             this.dgvProduct.Margin = new System.Windows.Forms.Padding(4);
@@ -636,17 +653,29 @@
             this.dgvProduct.TabIndex = 0;
             this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
             // 
-            // rndProName
+            // cmsProduct
             // 
-            this.rndProName.AutoSize = true;
-            this.rndProName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rndProName.Location = new System.Drawing.Point(102, 46);
-            this.rndProName.Margin = new System.Windows.Forms.Padding(4);
-            this.rndProName.Name = "rndProName";
-            this.rndProName.Size = new System.Drawing.Size(175, 27);
-            this.rndProName.TabIndex = 1;
-            this.rndProName.Text = "Product Name";
-            this.rndProName.UseVisualStyleBackColor = true;
+            this.cmsProduct.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsProduct.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stockQuantityToolStripMenuItem,
+            this.importHistoryToolStripMenuItem});
+            this.cmsProduct.Name = "cmsProduct";
+            this.cmsProduct.Size = new System.Drawing.Size(211, 80);
+            // 
+            // stockQuantityToolStripMenuItem
+            // 
+            this.stockQuantityToolStripMenuItem.Name = "stockQuantityToolStripMenuItem";
+            this.stockQuantityToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.stockQuantityToolStripMenuItem.Text = "Stock Quantity";
+            this.stockQuantityToolStripMenuItem.Visible = false;
+            this.stockQuantityToolStripMenuItem.Click += new System.EventHandler(this.stockQuantityToolStripMenuItem_Click);
+            // 
+            // importHistoryToolStripMenuItem
+            // 
+            this.importHistoryToolStripMenuItem.Name = "importHistoryToolStripMenuItem";
+            this.importHistoryToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
+            this.importHistoryToolStripMenuItem.Text = "Import History";
+            this.importHistoryToolStripMenuItem.Visible = false;
             // 
             // Product
             // 
@@ -677,6 +706,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.cmsProduct.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -729,5 +759,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.RadioButton rndProName;
+        private System.Windows.Forms.ContextMenuStrip cmsProduct;
+        private System.Windows.Forms.ToolStripMenuItem stockQuantityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem importHistoryToolStripMenuItem;
     }
 }

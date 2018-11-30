@@ -188,7 +188,7 @@ namespace MartSystem
                 if (dataRow==null)
                 {
                     DateTime now = DateTime.Now;
-                    dtExpenseData.Rows.Add(lbExpenseID.Text, now, txtTotal.Text);
+                    dtExpenseData.Rows.Add(lbExpenseID.Text, now, txtTotal.Text,UserLoginDetail.fName+" "+UserLoginDetail.lName);
                 }
                 else
                 {
@@ -212,6 +212,7 @@ namespace MartSystem
             dgvExpenseDetail.ClearSelection();
             if (dataRow != null)
             {
+                Text = "Edit Expense";
                 lbExpenseID.Text = dataRow["Expense ID"] + "";
 
                 sql = "select Desciption,amount from ExpenseDetail where expenseID='" + lbExpenseID.Text + "'";
@@ -226,6 +227,7 @@ namespace MartSystem
                 }
                 dataCon.Con.Close();
                 txtTotal.Text = total.ToString("#,##0.00");
+                btnAdd.PerformClick();
                 return;
             }
                 

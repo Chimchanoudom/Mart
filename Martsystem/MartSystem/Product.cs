@@ -226,6 +226,8 @@ namespace MartSystem
 
         private void dgvProduct_SelectionChanged(object sender, EventArgs e)
         {
+            stockQuantityToolStripMenuItem.Visible = importHistoryToolStripMenuItem.Visible = dgvProduct.SelectedRows.Count == 1;
+
             if (dgvProduct.SelectedRows.Count == 1)
             {
                 int selectedRowIndex = dgvProduct.SelectedRows[0].Index;
@@ -361,15 +363,27 @@ namespace MartSystem
         {
             string filter = "";
 
-            sql = "select proID 'Product ID',ProName 'Description',Qty 'Quantity',qtyType 'Quantity Type',UnitPrice ,CatName 'Category',BrandName 'Brand',Barcode from Product p join Category c on p.CatID=c.CatID join Brand b on p.BrandID=b.BrandID where 1=2;";
+            string criteria = "";
 
-            if (rndID.Checked) filter = "[Product ID]=";
-            else if (rndProName.Checked) filter = "Description=";
-            else if (rndCategory.Checked) filter = "Category=";
-            else if (rndBrand.Checked) filter = "Brand=";
-            else if (rndBarCode.Checked) filter = "Barcode=";
+            if (rndID.Checked) filter = "[Product ID]";
+            else if (rndProName.Checked) filter = "Description";
+            else if (rndCategory.Checked) filter = "Category";
+            else if (rndBrand.Checked) filter = "Brand";
+            else if (rndBarCode.Checked) filter = "Barcode";
 
-            filter +="'"+ txtSearch.Text+"'";
+
+            if (rndProName.Checked || rndCategory.Checked || rndBrand.Checked)
+            {
+                criteria = " like '%" + txtSearch.Text + "%'";
+            }
+            else
+            {
+                criteria += "='" + txtSearch.Text + "'";
+            }
+
+            filter += criteria;
+           
+
 
             dtProduct.DefaultView.RowFilter = filter;
 
@@ -379,6 +393,15 @@ namespace MartSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dtProduct.DefaultView.RowFilter = string.Empty;
+        }
+
+        private void stockQuantityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int selctedRowIndex = dgvProduct.SelectedRows[0].Index;
+            string proName = dgvProduct.Rows[selctedRowIndex].Cells["Description"].Value + "";
+
+            Stock stock = new Stock(proName);
+            stock.ShowDialog();
         }
     }
 }

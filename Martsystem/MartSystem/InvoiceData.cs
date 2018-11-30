@@ -20,11 +20,12 @@ namespace MartSystem
 
         DataTable dtInvoiceData = new DataTable();
         string sql;
+        DateTime[] searchedDate=new DateTime[2];
 
         private void InvoiceData_Load(object sender, EventArgs e)
         {
            
-            sql = "select InvID 'Invoice ID',DateCreated 'Date Created',total 'Total',rate 'Rate',recieveEng 'Dollars',recieveKh 'Riel',CONCAT(fname,' ',Lname) 'Employee' from Invoice i left join Employee e on i.EmpID=e.EmpID;";
+            sql = "select InvID 'Invoice ID',DateCreated 'Date Created',total 'Total',rate 'Rate',recieveEng 'Dollars',recieveKh 'Riel',CONCAT(fname,' ',Lname) 'Employee',cast(DateCreated as date) 'dateCreateForSearch' from Invoice i left join Employee e on i.EmpID=e.EmpID;";
             SqlDataAdapter dataAdaptor = new SqlDataAdapter(sql,dataCon.Con);
 
             dataAdaptor.Fill(dtInvoiceData);
@@ -40,6 +41,7 @@ namespace MartSystem
                 dgvInvoiceData.Columns["Riel"].DefaultCellStyle.Format
                 = "#,##0";
 
+            dgvInvoiceData.Columns["dateCreateForSearch"].Visible = false;
             dgvInvoiceData.ClearSelection();
         }
 
@@ -77,20 +79,29 @@ namespace MartSystem
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string filter = "";
+            string criteria = "";
+
+            if (rndID.Checked) filter = "[Invoice ID]";
+            else if (rndName.Checked) filter = "[Employee]";
+             else if (rndDateCreated.Checked) filter = "[dateCreateForSearch]";
+
+            
+
             if (rndID.Checked)
-                filter = "[Invoice ID]=";
-
-            else if (rndDateCreated.Checked) filter = "[Date Created]";
-
-            if (!rndDateCreated.Checked)
             {
-                filter += "'" + txtSearch.Text + "'";
+                criteria += "'" + txtSearch.Text + "'";
             }
-            else
+            else if (rndName.Checked)
+            {
+                criteria += "like '%" + txtSearch.Text + "%'";
+            }
+            else if(rndDateCreated.Checked)
             {
                 string[] st = txtSearch.Text.Split('-');
-                filter += ">='" + st[0] + "' AND [Date Created] <= '" + st[1] + "'";
+                criteria += ">='" + st[0] + "' AND [dateCreateForSearch] <= '" + st[1] + "'";
             }
+
+            filter += criteria;
 
             dtInvoiceData.DefaultView.RowFilter = filter;
         }
@@ -100,7 +111,7 @@ namespace MartSystem
         private void rndDateCreated_Click(object sender, EventArgs e)
         {
            
-            SearchDate searchDate = new SearchDate(txtSearch);
+            SearchDate searchDate = new SearchDate(searchedDate,txtSearch,btnSearch);
             searchDate.ShowDialog();
 
             if (searchDate.DialogResult != DialogResult.Yes)

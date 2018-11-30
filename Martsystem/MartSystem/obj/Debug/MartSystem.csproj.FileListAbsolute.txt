@@ -177,3 +177,4 @@ D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.exe
 D:\SETEC\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.pdb
 E:\Year 3\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.ChangePassword.resources
 E:\Year 3\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.ProductSalePercentage.resources
+E:\Year 3\SA\Mart\Martsystem\MartSystem\obj\Debug\MartSystem.SearchAlmostExpired.resources

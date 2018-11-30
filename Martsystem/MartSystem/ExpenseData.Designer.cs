@@ -46,6 +46,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rndName = new System.Windows.Forms.RadioButton();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.rndName);
             this.groupBox7.Controls.Add(this.rndDateCreated);
             this.groupBox7.Controls.Add(this.rndID);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -225,19 +227,19 @@
             this.deleteToolStripMenuItem,
             this.logToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 128);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(123, 100);
             // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Visible = false;
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
@@ -245,7 +247,7 @@
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Visible = false;
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
@@ -253,10 +255,23 @@
             // logToolStripMenuItem
             // 
             this.logToolStripMenuItem.Name = "logToolStripMenuItem";
-            this.logToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(122, 24);
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Visible = false;
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
+            // 
+            // rndName
+            // 
+            this.rndName.AutoSize = true;
+            this.rndName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rndName.Location = new System.Drawing.Point(259, 48);
+            this.rndName.Margin = new System.Windows.Forms.Padding(4);
+            this.rndName.Name = "rndName";
+            this.rndName.Size = new System.Drawing.Size(92, 27);
+            this.rndName.TabIndex = 0;
+            this.rndName.TabStop = true;
+            this.rndName.Text = "Name";
+            this.rndName.UseVisualStyleBackColor = true;
             // 
             // ExpenseData
             // 
@@ -306,5 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
+        private System.Windows.Forms.RadioButton rndName;
     }
 }

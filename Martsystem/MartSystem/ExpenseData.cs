@@ -20,6 +20,8 @@ namespace MartSystem
 
         DataTable dtExpense = new DataTable();
         string sql;
+        DateTime[] searchedDate=new DateTime[2];
+        
         private void ExpenseData_Load(object sender, EventArgs e)
         {
             sql = "select ExpenseId as 'Expense ID', DateCreate as 'Date Created',total as 'Total',e.Fname+' '+e.Lname 'Employee'  from expense ex join Employee e on ex.EmpID=e.EmpID;";
@@ -33,17 +35,27 @@ namespace MartSystem
             dgvExpenseData.Columns["Total"].DefaultCellStyle.Format = "#,##0.00";
 
             dgvExpenseData.ClearSelection();
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string filter = "";
-            if (rndID.Checked) filter = "[Expense ID]='" + txtSearch.Text + "'";
+            
+            if (rndID.Checked) {
+                filter = "[Expense ID]='"+txtSearch.Text+"'";
+            }
+            else if (rndName.Checked)
+            {
+                filter = "[Employee] like '%"+txtSearch.Text+"%'";
+            }
             else if (rndDateCreated.Checked)
             {
                 string[] st = txtSearch.Text.Split('-');
                 filter = "[Date Created]>='" + st[0] + "' AND [Date Created] <= '" + st[1] + "'";
             }
+
+
 
             dtExpense.DefaultView.RowFilter = filter;
         }
@@ -97,6 +109,7 @@ namespace MartSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dtExpense.DefaultView.RowFilter = string.Empty;
+            txtSearch.Text = "";
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -114,7 +127,7 @@ namespace MartSystem
         private void rndDateCreated_Click(object sender, EventArgs e)
         {
 
-            SearchDate searchDate = new SearchDate(txtSearch);
+            SearchDate searchDate = new SearchDate(searchedDate,txtSearch,btnSearch);
             searchDate.ShowDialog();
 
             if (searchDate.DialogResult != DialogResult.Yes)

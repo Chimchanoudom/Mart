@@ -328,7 +328,6 @@
             this.dgvExpenseDetail.Size = new System.Drawing.Size(488, 302);
             this.dgvExpenseDetail.TabIndex = 0;
             this.dgvExpenseDetail.SelectionChanged += new System.EventHandler(this.dgvExpenseDetail_SelectionChanged);
-            
             // 
             // Description
             // 
@@ -355,7 +354,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateExpense";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateExpense";
+            this.Text = "Create Expense";
             this.Load += new System.EventHandler(this.CreateExpense_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
