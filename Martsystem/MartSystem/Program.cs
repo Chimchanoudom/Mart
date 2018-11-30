@@ -16,12 +16,12 @@ namespace MartSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //if (new LogIN().ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new Form1());
-            //}
+            if (new LogIN().ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new Form1());
+            }
 
-            Application.Run(new ProductSalePercentage());
+            //Application.Run(new ProductSalePercentage());
 
         }
     }

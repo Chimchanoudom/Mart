@@ -56,7 +56,7 @@ namespace MartSystem
 
 
 
-            sql = "select ProName,qtyType,i.qty,UnitPrice,p.proId from InvoiceDetail i join Product p on i.ProID=p.ProID;";
+            sql = "select ProName,qtyType,i.qty,UnitPrice,p.proId from InvoiceDetail i join Product p on i.ProID=p.ProID where invId='"+txtInvoiceID.Text+"';";
 
             dataCon.Con.Open();
             SqlDataReader dataReader = dataCon.ExecuteQry(sql);
