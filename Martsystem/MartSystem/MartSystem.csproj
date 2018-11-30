@@ -190,6 +190,12 @@
     <Compile Include="Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductSalePercentage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductSalePercentage.Designer.cs">
+      <DependentUpon>ProductSalePercentage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Quantity Type.cs">
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductSalePercentage.resx">
+      <DependentUpon>ProductSalePercentage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
