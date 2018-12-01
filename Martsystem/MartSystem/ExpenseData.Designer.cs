@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.rndName = new System.Windows.Forms.RadioButton();
             this.rndDateCreated = new System.Windows.Forms.RadioButton();
             this.rndID = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -46,7 +47,6 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rndName = new System.Windows.Forms.RadioButton();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -71,6 +71,20 @@
             this.groupBox7.TabIndex = 0;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "លក្ខខណ្ឌ";
+            // 
+            // rndName
+            // 
+            this.rndName.AutoSize = true;
+            this.rndName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rndName.Location = new System.Drawing.Point(259, 48);
+            this.rndName.Margin = new System.Windows.Forms.Padding(4);
+            this.rndName.Name = "rndName";
+            this.rndName.Size = new System.Drawing.Size(92, 27);
+            this.rndName.TabIndex = 0;
+            this.rndName.TabStop = true;
+            this.rndName.Text = "Name";
+            this.rndName.UseVisualStyleBackColor = true;
+            this.rndName.CheckedChanged += new System.EventHandler(this.rndID_CheckedChanged_1);
             // 
             // rndDateCreated
             // 
@@ -99,7 +113,7 @@
             this.rndID.TabStop = true;
             this.rndID.Text = "ID";
             this.rndID.UseVisualStyleBackColor = true;
-            this.rndID.CheckedChanged += new System.EventHandler(this.rndID_CheckedChanged);
+            this.rndID.CheckedChanged += new System.EventHandler(this.rndID_CheckedChanged_1);
             // 
             // groupBox6
             // 
@@ -259,19 +273,6 @@
             this.logToolStripMenuItem.Text = "Log";
             this.logToolStripMenuItem.Visible = false;
             this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
-            // 
-            // rndName
-            // 
-            this.rndName.AutoSize = true;
-            this.rndName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rndName.Location = new System.Drawing.Point(259, 48);
-            this.rndName.Margin = new System.Windows.Forms.Padding(4);
-            this.rndName.Name = "rndName";
-            this.rndName.Size = new System.Drawing.Size(92, 27);
-            this.rndName.TabIndex = 0;
-            this.rndName.TabStop = true;
-            this.rndName.Text = "Name";
-            this.rndName.UseVisualStyleBackColor = true;
             // 
             // ExpenseData
             // 

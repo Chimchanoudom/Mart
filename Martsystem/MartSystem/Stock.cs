@@ -31,7 +31,7 @@ namespace MartSystem
         
         private void Stock_Load(object sender, EventArgs e)
         {
-             sql = "select stockid 'Stock ID', ProName 'Product Name',importDate 'Import Date',s.Qty 'Quantity',s.UnitPrice 'Unit Price',ExpiredDate 'Expire Date' ,case when ExpiredDate<=(select convert(date,GETDATE())) then '1' else '0' end 'isExpired' from stock s join Product p on s.ProID=p.ProID join Import i on s.ImportID=i.ImportID ;";
+             sql = "select stockid 'Stock ID', ProName 'Product Name',importDate 'Import Date',s.Qty 'Quantity',s.UnitPrice 'Unit Cost',ExpiredDate 'Expire Date' ,case when ExpiredDate<=(select convert(date,GETDATE())) then '1' else '0' end 'isExpired' from stock s join Product p on s.ProID=p.ProID join Import i on s.ImportID=i.ImportID ;";
 
 
             SqlDataAdapter dataAdaptor = new SqlDataAdapter(sql,dataCon.Con);
@@ -109,6 +109,8 @@ namespace MartSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dtStock.DefaultView.RowFilter = string.Empty;
+            
+            rndProductName.Checked = true;
             ChangeRowForeColor();
         }
 
@@ -174,12 +176,17 @@ namespace MartSystem
             {
                 rndProductName.Checked = true;
             }
+            else
+            {
+                txtSearch.Enabled = false;
+            }
 
 
         }
 
-        private void rndProductName_Click(object sender, EventArgs e)
+        private void rndProductName_CheckedChanged(object sender, EventArgs e)
         {
+            txtSearch.Enabled = true;
             txtSearch.Text = "";
         }
     }

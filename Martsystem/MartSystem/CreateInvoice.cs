@@ -60,14 +60,19 @@ namespace MartSystem
 
             dataCon.Con.Open();
             SqlDataReader dataReader = dataCon.ExecuteQry(sql);
-            
+
+
+
             while (dataReader.Read())
             {
-                dgvInvoiceDetail.Rows.Add(dataReader.GetString(0), dataReader.GetString(1), "+",Convert.ToDouble(dataReader.GetValue(2)), "-",Convert.ToDouble(dataReader.GetValue(3)), "0", "x", dataReader.GetString(4));
+
+                dgvInvoiceDetail.Rows.Add(dataReader.GetString(0), dataReader.GetString(1), "+", Convert.ToDouble(dataReader.GetValue(2)), "-", Convert.ToDouble(dataReader.GetValue(3)), "0", "x", dataReader.GetString(4));
+                
             }
 
-            dataCon.Con.Close();
+            
 
+            dataCon.Con.Close();
         }
 
 
@@ -80,6 +85,7 @@ namespace MartSystem
         int id;
         DataTable dtInvoiceData;
         bool error;
+        
 
         private void CreateInvoice_Load(object sender, EventArgs e)
         {
@@ -544,6 +550,7 @@ namespace MartSystem
                 }
                 else
                 {
+                    
                     sql = "insert into invoiceLog (editDate,EditBy,InvID) values('" + stNow + "','" + UserLoginDetail.empID + "','" + txtInvoiceID.Text + "');";
 
                     sql += "update invoice set Total=" + total + ",recieveEng=" + recieveEng + ",recieveKh=" + recieveKh + " where invID='" + txtInvoiceID.Text + "';";
@@ -587,6 +594,8 @@ namespace MartSystem
                         dataRowInvoice["Dollars"] = recieveEng;
                         dataRowInvoice["Riel"] = recieveKh;
                         this.Close();
+
+
                         return;
                     }
 

@@ -52,13 +52,9 @@ namespace MartSystem
             searchedDate[0] = dtpFrom.Value;
             searchedDate[1] = dtpTo.Value;
             DialogResult = DialogResult.Yes;
+            txt.Enabled = false;
             btnSearch.PerformClick();
             
-        }
-
-        private void SearchDate_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

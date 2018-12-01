@@ -37,6 +37,7 @@ namespace MartSystem
             return dataReader;
         }
 
+
         public static int rate { get; set; }
         public static int daysAlmostExp { get; set; }
 
@@ -248,5 +249,7 @@ namespace MartSystem
         {
             return new DateTime(date.Year, date.Month, date.Day, 0, 0, 0);
         }
+
+       
     }      
 }

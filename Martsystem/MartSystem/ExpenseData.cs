@@ -47,15 +47,13 @@ namespace MartSystem
             }
             else if (rndName.Checked)
             {
-                filter = "[Employee] like '%"+txtSearch.Text+"%'";
+                filter = "[Employee] like '%" + txtSearch.Text+"%'";
             }
             else if (rndDateCreated.Checked)
             {
                 string[] st = txtSearch.Text.Split('-');
                 filter = "[Date Created]>='" + st[0] + "' AND [Date Created] <= '" + st[1] + "'";
             }
-
-
 
             dtExpense.DefaultView.RowFilter = filter;
         }
@@ -109,7 +107,9 @@ namespace MartSystem
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dtExpense.DefaultView.RowFilter = string.Empty;
-            txtSearch.Text = "";
+
+            rndID.Checked = true;
+            
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
@@ -117,11 +117,6 @@ namespace MartSystem
 
             if ("'".IndexOf(e.KeyChar) > -1)
                 e.KeyChar = '\0';
-        }
-
-        private void rndID_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void rndDateCreated_Click(object sender, EventArgs e)
@@ -143,6 +138,13 @@ namespace MartSystem
             LogData expenseLog = new LogData("Log for Expense " + id, sql);
 
             expenseLog.ShowDialog();
+        }
+
+        private void rndID_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtSearch.Enabled = true;
+            txtSearch.Text = "";
+
         }
     }
 }

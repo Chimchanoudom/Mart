@@ -63,6 +63,8 @@ namespace MartSystem
 
             CreateInvoice createInvoice = new CreateInvoice(selectedRow);
             createInvoice.ShowDialog();
+
+            dtInvoiceData.AcceptChanges();
         }
 
         private void logToolStripMenuItem_Click(object sender, EventArgs e)

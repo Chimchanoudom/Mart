@@ -29,13 +29,14 @@ namespace MartSystem
                 MessageBox.Show("The date on the left side must be lesser than the date on the right side");
                 return;
             }
-
+            txtSearch.Text = "";
             getData();
 
         }
 
         private void ProductSalePercentage_Load(object sender, EventArgs e)
         {
+
             DateTime now = DateTime.Now;
             dtpTo.Value = now;
             dtpFrom.Value = now.AddDays(-30);
@@ -57,6 +58,17 @@ namespace MartSystem
 
             dataAdaptor.Fill(dt);
             dgv.DataSource = dt;
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string filter = "Description like '%" + txtSearch.Text + "%'";
+            dt.DefaultView.RowFilter = filter;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dt.DefaultView.RowFilter = string.Empty;
         }
     }
 }

@@ -162,6 +162,7 @@
             this.rndExpired.TabIndex = 0;
             this.rndExpired.Text = "Expired";
             this.rndExpired.UseVisualStyleBackColor = true;
+            this.rndExpired.CheckedChanged += new System.EventHandler(this.rndProductName_CheckedChanged);
             this.rndExpired.Click += new System.EventHandler(this.rndExpired_Click);
             // 
             // rndExpiredDate
@@ -203,7 +204,7 @@
             this.rndProductName.TabStop = true;
             this.rndProductName.Text = "Product Name";
             this.rndProductName.UseVisualStyleBackColor = true;
-            this.rndProductName.Click += new System.EventHandler(this.rndProductName_Click);
+            this.rndProductName.CheckedChanged += new System.EventHandler(this.rndProductName_CheckedChanged);
             // 
             // panel1
             // 
