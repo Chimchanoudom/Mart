@@ -52,11 +52,11 @@ namespace MartSystem
 
             ComboboxItem category,brand;
 
-            if (cbCategory.SelectedIndex == -1) category = cbCategory.SelectedItem as ComboboxItem;
-            else  category = cbCategory.Items[0] as ComboboxItem;
+            if (cbCategory.SelectedIndex == -1) category = cbCategory.Items[0] as ComboboxItem;
+            else  category = cbCategory.Items[cbCategory.SelectedIndex] as ComboboxItem;
 
-            if (cbBrand.SelectedIndex == -1) brand = cbBrand.SelectedItem as ComboboxItem;
-            else brand = cbBrand.Items[0] as ComboboxItem;
+            if (cbBrand.SelectedIndex == -1) brand = cbBrand.Items[0] as ComboboxItem;
+            else brand = cbBrand.Items[cbCategory.SelectedIndex] as ComboboxItem;
 
             sql="insert into product values('"+lbProductID.Text+"','"+productName+"',0,'"+qtyType+"',"+unitPrice+","+category.Value+","+brand.Value+",'"+barcode+"','"+fileName+"')";
 
@@ -326,13 +326,7 @@ namespace MartSystem
                 return;
 
             int selectedRowIndex = dgvProduct.SelectedRows[0].Index;
-            int selectedQty = int.Parse(dtProduct.Rows[selectedRowIndex]["Quantity"] + "");
-
-            if (selectedQty>0)
-            {
-                MessageBox.Show("Cannot delete product", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            
 
 
             sql = "delete from product where proid='" + lbProductID.Text + "';";
