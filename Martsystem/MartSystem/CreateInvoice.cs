@@ -329,7 +329,7 @@ namespace MartSystem
 
             if (dr.Length == 1 && (double)dr[0]["qty"]>0)
             {
-                txtBarcode.Text = "";
+                txtBarcode.Text = "Enter Barcode";
 
                 DataGridViewRow drInDGV = dgvInvoiceDetail.Rows
                 .Cast<DataGridViewRow>()
