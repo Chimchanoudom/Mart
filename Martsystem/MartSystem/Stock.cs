@@ -23,6 +23,7 @@ namespace MartSystem
         {
             InitializeComponent();
             this.proName = proName;
+            contextMenuStrip1.Visible = false;
         }
         string proName;
 
